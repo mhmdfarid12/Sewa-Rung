@@ -1,5 +1,6 @@
 import React from "react";
 import vector from "../../asset/vector.svg";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -58,8 +59,9 @@ function Register() {
 
         <div id="login" className="text-center mb-5 text-dark">
           <span className="my-9 text-slate-50">Punya Akun?</span>
-
-          <span className="my-9 text-slate-50">klik di sini untuk login</span>
+          <Link to={"/login"}>
+            <span className="my-9 text-slate-50">klik di sini untuk login</span>
+          </Link>
         </div>
       </div>
     </div>

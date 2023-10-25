@@ -22,7 +22,7 @@ function Home() {
         Ciptakan Ruangan Impian Anda
       </h4>
       <div className="flex items-center justify-center my-9">
-        <Link to="/register">
+        <Link to={"/register"}>
           <button className="bg-zinc-700 rounded-lg w-40 h-10 text-slate-50 items-center just ify-items-center font-semibold">
             Daftar sekarang!
           </button>
