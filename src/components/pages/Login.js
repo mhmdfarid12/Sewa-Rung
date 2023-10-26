@@ -1,12 +1,12 @@
 import React from "react";
-import vector from "../../asset/vector.svg";
+import logoV2 from "../../asset/logoV2.png";
 import { Link } from "react-router-dom";
 
 function Login() {
   return (
     <div className="bg-[#B9B4C7] h-screen  flex justify-center items-center">
       <div className="bg-slate-50  w-96 h-[450px] rounded-l-3xl flex justify-center items-center">
-        <img src={vector} alt="vector" className=" w-3/4 w-[100%]" />
+        <img src={logoV2} alt="logoV2" className=" w-3/4 w-[100%]" />
       </div>
       <div className="bg-[#393646]  w-96 h-[450px] rounded-r-3xl">
         <div className="">
