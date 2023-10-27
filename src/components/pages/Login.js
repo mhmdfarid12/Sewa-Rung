@@ -10,12 +10,12 @@ function Login() {
       </div>
       <div className="bg-[#393646]  w-96 h-[450px] rounded-r-3xl">
         <div className="">
-          <h3 className="text-4xl font-mono text-slate-50  w-96 text-center font-bold my-5">
+          <h3 className="text-4xl font-mono text-slate-50  w-96 text-center font-bold my-[10px]">
             LOGIN
           </h3>
         </div>
 
-        <form className=" card-body-color p-lg-5">
+        <form className=" card-body-color ">
           <div className="my-6 flex justify-center items-center ">
             <input
               type="text"
