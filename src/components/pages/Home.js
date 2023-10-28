@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ruangRapat from "../../asset/ruangRapat.webp";
 import kamar from "../../asset/kamar.jpg";
-import logoV1 from "../../asset/logoV1.png";
+import logoV2 from "../../asset/logoV2.png";
 import rooftop from "../../asset/rooftop.jpg";
 
 function Home() {
   return (
     <div className="bg-[#B9B4C7] py-2.5 ">
-      <h1 className="text-6xl font-serif text-zinc-700 text-center my-9">
-        GRAND VIEW HOTEL
-      </h1>
+      <div className=" flex justify-center items-center">
+        <img src={logoV2} alt="logoV2" className=" w-3/4 w-[50%]" />
+      </div>
+
       <div className="rounded-2xl  flex justify-center items-center">
         <img
           className="rounded-2xl  flex justify-center items-center h-[500px]"
