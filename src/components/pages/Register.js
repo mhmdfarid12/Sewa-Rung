@@ -5,42 +5,47 @@ import { Link } from "react-router-dom";
 
 function Register() {
   return (
-    <div className="bg-[#B9B4C7] h-screen  flex justify-center items-center">
-      <div className="bg-slate-50  w-96 h-[450px] rounded-l-3xl flex justify-center items-center">
+    <div
+      className="bg-[#B9B4C7] h-screen flex flex-col justify-center items-center
+    md:flex md:flex-row md:justify-center md:items-center
+    lg:flex lg:flex-row lg:justify-center lg:items-center
+    "
+    >
+      <div className=" w-[200px]  h-[150px] rounded-t-[20px]  md:w-[300px] md:h-[300px] md:rounded-l-3xl md:rounded-r-none bg-slate-50  lg:w-96 lg:h-[450px] lg:rounded-l-3xl  lg:rounded-r-none flex justify-center items-center">
         <img src={logoV2} alt="logoV2" className=" w-3/4 w-[100%]" />
       </div>
-      <div className="bg-[#393646]  w-96 h-[450px] rounded-r-3xl">
+      <div className="  w-[200px]  h-[200px] rounded-b-[20px]   bg-[#393646]  md:w-[300px] md:h-[300px]  md:rounded-r-3xl md:rounded-l-none lg:w-96 lg:h-[450px] lg:rounded-r-3xl lg:rounded-t-none lg:rounded-r-3xl lg:rounded-r-[20px]">
         <div className="">
-          <h3 className="text-4xl font-mono text-slate-50  w-96 text-center font-bold my-[10px]">
+          <h3 className="  text-[10px]  md:text-center md:text-[20px]  lg:text-4xl font-mono text-slate-50   text-center font-bold my-[10px]">
             REGISTER
           </h3>
         </div>
 
         <form className=" card-body-color">
-          <div className="my-6 flex justify-center items-center ">
+          <div className="my-3 flex justify-center items-center ">
             <input
               type="text"
-              className=" rounded-lg w-80 h-14  placeholder:text-[20px] text-[20px]"
+              className=" rounded-[5px] placeholder:text-[10px] md:text-[10px]  w-[150px] h-[20px]  md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px] lg:w-80 lg:h-14 lg:placeholder:text-[20px] lg:text-[20px]"
               id="Username"
               placeholder="User Name"
               name="username"
             />
           </div>
 
-          <div className="my-6 flex justify-center items-center ">
+          <div className="my-3 flex justify-center items-center ">
             <input
               type="email"
-              className=" rounded-lg w-80 h-14  placeholder:text-[20px] text-[20px]"
+              className="  rounded-[5px] placeholder:text-[10px] md:text-[10px]  w-[150px] h-[20px] md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px]  lg:w-80 lg:h-14    lg:placeholder:text-[20px] lg:text-[20px]"
               id="email"
               name="email"
               placeholder="Email"
             />
           </div>
 
-          <div className="my-6 flex justify-center items-center ">
+          <div className="my-3 flex justify-center items-center ">
             <input
               type="password"
-              className=" rounded-lg w-80 h-14  placeholder:text-[20px] text-[20px]"
+              className="  rounded-[5px] placeholder:text-[10px] md:text-[10px]   w-[150px] h-[20px] md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px] lg:w-80 lg:h-14     lg:placeholder:text-[20px] lg:text-[20px]"
               id="password"
               name="password"
               placeholder="password"
@@ -51,7 +56,7 @@ function Register() {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-slate-50 w-80 h-14 rounded-3xl text-3xl"
+              className="bg-slate-50 w-[150px] h-[20px]   md:w-[200px] md:h-[30px]  lg:w-80 lg:h-14 rounded-3xl text-[15px]"
             >
               REGISTER
             </button>
@@ -59,9 +64,13 @@ function Register() {
         </form>
 
         <div id="login" className="text-center mb-5 text-dark">
-          <span className="my-9 text-slate-50">Punya Akun?</span>
+          <span className="my-9 text-slate-50 text-[8px]  md:text-[10px]  lg:text-[20px]">
+            Punya Akun?
+          </span>
           <Link to={"/login"}>
-            <span className="my-9 text-slate-50">klik di sini untuk login</span>
+            <span className="my-9 text-slate-50 text-[8px]  md:text-[10px]   lg:text-[20px]">
+              klik di sini untuk login
+            </span>
           </Link>
         </div>
       </div>

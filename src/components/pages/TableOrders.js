@@ -18,7 +18,7 @@ function TableOrders() {
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    href="/home"
                   >
                     HOME
                   </a>
@@ -143,13 +143,25 @@ function TableOrders() {
               <thead>
                 <tr className="bg-white even:bg-[#dddddd]">
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    NOMOR LANTAI
+                    Rooms
                   </th>
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    NOMOR KAMAR
+                    Capacity
                   </th>
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    ACTION
+                    Snack
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Lunch
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Extra time
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Booking
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Action
                   </th>
                 </tr>
               </thead>
@@ -159,23 +171,19 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1
+                    double bad
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
@@ -191,10 +199,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -208,10 +227,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -225,10 +255,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -242,10 +283,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -259,10 +311,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -276,10 +339,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -293,10 +367,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -310,10 +395,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -327,27 +423,21 @@ function TableOrders() {
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    double bad
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>

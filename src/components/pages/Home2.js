@@ -4,10 +4,106 @@ import ruangRapat from "../../asset/ruangRapat.webp";
 import kamar from "../../asset/kamar.jpg";
 import logoV2 from "../../asset/logoV2.png";
 import rooftop from "../../asset/rooftop.jpg";
+import logoV3 from "../../asset/logoV3.png";
 
-function Home() {
+function Home2() {
   return (
     <div className="bg-[#B9B4C7] py-2.5 w-[100%] sm:w-[100%] lg:w-[100%]">
+      <header class="bg-zinc-700">
+        <div class="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
+          <a class="block text-teal-600" href="/">
+            <span class="sr-only">Home</span>
+            <img src={logoV3} alt="logoV2" className="mt-[10px] w-[70px] " />
+          </a>
+
+          <div class="flex flex-1 items-center justify-end md:justify-between">
+            <nav aria-label="Global" class="hidden md:block">
+              <ul class="flex items-center gap-6 text-sm">
+                <li>
+                  <a
+                    class="text-gray-500 transition hover:text-gray-500/75"
+                    href="/"
+                  >
+                    HOME
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="text-gray-500 transition hover:text-gray-500/75"
+                    href="/tabel"
+                  >
+                    ROOMS
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="text-gray-500 transition hover:text-gray-500/75"
+                    href="/tabel orders"
+                  >
+                    ORDERS
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="text-gray-500 transition hover:text-gray-500/75"
+                    href="/tabel customers"
+                  >
+                    CUSTOMERS
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="text-gray-500 transition hover:text-gray-500/75"
+                    href="/report sewa"
+                  >
+                    REPORT SEWA
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+              <div class="sm:flex sm:gap-4">
+                <a
+                  class="block rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
+                  href="/"
+                >
+                  Logout
+                </a>
+
+                <a
+                  class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+                  href="/"
+                >
+                  Register
+                </a>
+              </div>
+
+              <button class="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+                <span class="sr-only">Toggle menu</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
       <div className=" flex justify-center items-center">
         <img src={logoV2} alt="logoV2" className=" w-3/4 w-[50%]" />
       </div>
@@ -23,13 +119,7 @@ function Home() {
       <h4 className="sm:text-2xl lg:text-4xl font-mono text-zinc-700 text-center">
         Ciptakan Ruangan Impian Anda
       </h4>
-      <div className="flex items-center justify-center my-9">
-        <Link to={"/register"}>
-          <button className="bg-zinc-700 rounded-lg w-40 h-10 text-slate-50 items-center just ify-items-center font-semibold">
-            Daftar sekarang!
-          </button>
-        </Link>
-      </div>
+
       <br></br>
       <div class="flex items-center justify-center space-x-4 my-9 ">
         <span>
@@ -198,4 +288,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home2;

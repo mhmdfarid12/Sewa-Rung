@@ -2,7 +2,7 @@ import React from "react";
 import logoV3 from "../../asset/logoV3.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function ReportSewa() {
+function TableOrders() {
   return (
     <div className=" bg-[#B9B4C7] w-[900px] h-[1500px] md:w-[900px] lg:w-[100%]">
       <header class="bg-zinc-700">
@@ -18,7 +18,7 @@ function ReportSewa() {
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    href="/home"
                   >
                     HOME
                   </a>
@@ -139,27 +139,52 @@ function ReportSewa() {
             </div>
           </div>
           <div className=" flex justify-center items-center ">
-            <table className="border-collapse w-[800px]  w-[100%] md:w-[50%] lg:w-[100%]">
+            <table className="    md:w-[50%] lg:w-[100%]">
               <thead>
                 <tr className="bg-white even:bg-[#dddddd]">
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    NOMOR LANTAI
+                    Date Time
                   </th>
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    NOMOR KAMAR
+                    Rooms
                   </th>
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    ACTION
+                    Capacity
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Snack
+                  </th>
+
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Extra time
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Booking
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    Action
                   </th>
                 </tr>
               </thead>
-              <tbody className="w-[100%] md:w-[50%] md:h-[500px] g:w-[80%] ">
+              <tbody className="w- md:w-[50%] md:h-[500px] lg:w-[80%] ">
                 <tr className="bg-white even:bg-gray-100">
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
@@ -172,10 +197,22 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1
+                    11/10/23 03:04:15 AM
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
+                    2
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
@@ -188,13 +225,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -205,13 +253,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -222,13 +281,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -239,13 +309,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -256,13 +337,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -273,13 +365,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -290,13 +393,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    11/10/23 03:04:15 AM
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    double bad
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -307,47 +421,24 @@ function ReportSewa() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    11/10/23 03:04:15 AM
                   </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    double bad
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    tidak ada
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    1 hari
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -417,4 +508,4 @@ function ReportSewa() {
   );
 }
 
-export default ReportSewa;
+export default TableOrders;

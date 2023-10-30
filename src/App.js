@@ -6,6 +6,7 @@ import Table from "./components/pages/Table";
 import TableOrders from "./components/pages/TableOrders";
 import TableCustomers from "./components/pages/TableCustomers";
 import Reportsewa from "./components/pages/ReportSewa";
+import Home2 from "./components/pages/Home2";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/tabel orders" element={<TableOrders />} />
           <Route path="/tabel customers" element={<TableCustomers />} />
           <Route path="/report sewa" element={<Reportsewa />} />
+          <Route path="/home" element={<Home2 />} />
         </Routes>
       </Router>
     </div>

@@ -18,7 +18,7 @@ function TableCustomers() {
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    href="/home"
                   >
                     HOME
                   </a>
@@ -143,10 +143,13 @@ function TableCustomers() {
               <thead>
                 <tr className="bg-white even:bg-[#dddddd]">
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    NOMOR LANTAI
+                    NAME
                   </th>
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
-                    NOMOR KAMAR
+                    PHONE
+                  </th>
+                  <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
+                    PAYMETHOD
                   </th>
                   <th className="border-2 border-[#dddddd] text-left p-[8px] text-center">
                     ACTION
@@ -156,10 +159,13 @@ function TableCustomers() {
               <tbody className="w-[100%] md:w-[50%] md:h-[500px] g:w-[80%] ">
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
@@ -172,10 +178,13 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
@@ -188,13 +197,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -205,13 +216,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -222,13 +235,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -239,13 +254,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -256,13 +273,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -273,13 +292,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -290,13 +311,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -307,13 +330,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
@@ -324,30 +349,15 @@ function TableCustomers() {
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
+                    muhammad farid
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
+                    98556734267
+                  </td>
+                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                    cash
                   </td>
                   <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
                     <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                       EDIT
                     </button>
