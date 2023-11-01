@@ -165,7 +165,7 @@ function TableOrders() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="w-[100%] md:w-[50%] md:h-[500px] g:w-[80%] ">
+              <tbody className="w-[100%] md:w-[50%] g:w-[80%] ">
                 <tr className="bg-white even:bg-gray-100">
                   <td className="border-2 border-[#dddddd] text-left p-[8px] ">
                     2

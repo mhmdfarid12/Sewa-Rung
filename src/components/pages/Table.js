@@ -1,8 +1,86 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import logoV3 from "../../asset/logoV3.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Pagination } from "react-bootstrap";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
 
 function Table() {
+  const navigate = useNavigate();
+  const [currPage, setCurrPage] = useState(1);
+  const [srcTerm, setSrcTerm] = useState("");
+  const [rcdPerPage, setRcdPerPage] = useState(5);
+
+  const [rooms, setRooms] = useState([]);
+
+  const getRooms = async () => {
+    try {
+      const respons = await axios.get("http://localhost:1234/rooms");
+      const allRooms = respons.data;
+      const filteredRooms = allRooms.filter((employee) =>
+        employee.noLantai?.toLowerCase().includes(srcTerm?.toLowerCase())
+      );
+      setRooms(filteredRooms);
+      console.log(filteredRooms);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const firstIdx = (currPage - 1) * rcdPerPage;
+  const lastIdx = currPage * rcdPerPage;
+  const [recordsPerPage, setRecordsPerPage] = useState(5);
+
+  const npg = Math.ceil(rooms.length / recordsPerPage);
+  const num = [...Array(npg + 1).keys()].slice(1);
+
+  const rcd = rooms.slice(firstIdx, lastIdx);
+
+  function prPage() {
+    if (currPage !== 1) {
+      setCurrPage(currPage - 1);
+    }
+  }
+
+  function changPage(id) {
+    setCurrPage(id);
+  }
+
+  function nxtPage() {
+    if (currPage !== npg) {
+      setCurrPage(currPage + 1);
+    }
+  }
+
+  const del = async (id) => {
+    try {
+      const respons = await axios.delete(` http://localhost:1234/rooms/${id}`);
+      console.log(respons);
+      console.log("deleted");
+      getRooms();
+    } catch (error) {
+      console.log(error);
+    }
+    navigate("/tabel");
+  };
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login");
+
+    Swal.fire({
+      position: "top-middle",
+      icon: "success",
+      title: "LOGOUT Berhasil!!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  useEffect(() => {
+    getRooms();
+  }, [srcTerm]);
+
   return (
     <div className=" bg-[#B9B4C7] w-[900px] h-[1500px] md:w-[900px] lg:w-[100%]">
       <header class="bg-zinc-700">
@@ -108,9 +186,9 @@ function Table() {
               <input
                 type="text"
                 className="rounded-lg w-80 h-[40px] placeholder:text-[20px] text-[20px] pr-8"
-                id="SEARCH"
-                name="SEARCH"
                 placeholder="SEARCH"
+                value={srcTerm}
+                onChange={(e) => setSrcTerm(e.target.value)}
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,10 +203,16 @@ function Table() {
             </div>
 
             <div className=" flex justify-center items-center mx-[30px] ">
-              <select className=" bg-zinc-700 text-[#FFF7F7] w-[60px] rounded-xl h-[40px]  md:bg-zinc-700 text-[#FFF7F7] md:w-[60px] rounded-xl h-[40px]    lg:bg-zinc-700 text-[#FFF7F7] lg:w-[100px] rounded-xl h-[40px] ">
-                <option>5</option>
-                <option>10</option>
-                <option>15</option>
+              <select
+                value={recordsPerPage}
+                onChange={(e) =>
+                  setCurrPage(1) || setRecordsPerPage(Number(e.target.value))
+                }
+                className=" bg-zinc-700 text-[#FFF7F7] w-[60px] rounded-xl h-[40px]  md:bg-zinc-700 text-[#FFF7F7] md:w-[60px] rounded-xl h-[40px]    lg:bg-zinc-700 text-[#FFF7F7] lg:w-[100px] rounded-xl h-[40px] "
+              >
+                <option value={5}>5</option>
+                <option value={10}>10</option>
+                <option value={15}>15</option>
               </select>
             </div>
 
@@ -153,264 +237,57 @@ function Table() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="w-[100%] md:w-[50%] md:h-[500px] g:w-[80%] ">
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    10
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    5
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    {" "}
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
+              <tbody className="w-[100%] md:w-[50%]  g:w-[80%] ">
+                {rooms && rooms.length > 0 ? (
+                  rcd.map((item, index) => {
+                    return (
+                      <tr className="bg-white even:bg-gray-100" key={index}>
+                        <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                          {item.noLantai}
+                        </td>
+                        <td className="border-2 border-[#dddddd] text-left p-[8px] ">
+                          {item.noKamar}
+                        </td>
+
+                        <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
+                          <Link to={`/#/${item.id}`}>
+                            <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
+                              EDIT
+                            </button>
+                          </Link>
+                          &nbsp;
+                          <button
+                            className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]"
+                            onClick={() => del(item.id)}
+                          >
+                            DELETE
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan="3">No data available</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
-          <div class="inline-block my-[20px]">
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              {" "}
-              &laquo;{" "}
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              1
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white "
-            >
-              2
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              3
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              4
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              5
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              6
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              {" "}
-              &raquo;{" "}
-            </a>
-          </div>
+          <br></br>
+          <Pagination>
+            <Pagination.Prev onClick={prPage} />
+            {num.map((n, i) => (
+              <Pagination.Item
+                key={i}
+                active={currPage === n}
+                onClick={() => changPage(n)}
+              >
+                {n}
+              </Pagination.Item>
+            ))}
+            <Pagination.Next onClick={nxtPage} />
+          </Pagination>
         </div>
       </div>
     </div>

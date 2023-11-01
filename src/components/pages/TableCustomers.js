@@ -1,8 +1,59 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { Pagination } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import logoV3 from "../../asset/logoV3.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 function TableCustomers() {
+  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [recordsPerPage, setRecordsPerPage] = useState(5);
+  const [customers, setCustomers] = useState([]);
+  // function for supervisor START
+
+  const getCustomers = async () => {
+    try {
+      const respons = await axios.get("http://localhost:1234/customers");
+      const allCustomers = respons.data;
+      const filteredCustomers = allCustomers.filter(
+        (employee) =>
+          employee.name?.toLowerCase().includes(searchTerm?.toLowerCase()) &&
+          employee.role !== "supervisor"
+      );
+
+      setCustomers(filteredCustomers);
+      console.log(filteredCustomers);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const firstIndex = (currentPage - 1) * recordsPerPage;
+  const lastIndex = currentPage * recordsPerPage;
+  const records = customers.slice(firstIndex, lastIndex);
+
+  const npage = Math.ceil(customers.length / recordsPerPage);
+  const number = [...Array(npage + 1).keys()].slice(1);
+
+  function prePage() {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+
+  function changePage(id) {
+    setCurrentPage(id);
+  }
+
+  function nextPage() {
+    if (currentPage !== npage) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+
   return (
     <div className=" bg-[#B9B4C7] w-[900px] h-[1500px] md:w-[900px] lg:w-[100%]">
       <header class="bg-zinc-700">
@@ -111,6 +162,8 @@ function TableCustomers() {
                 id="SEARCH"
                 name="SEARCH"
                 placeholder="SEARCH"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,271 +209,54 @@ function TableCustomers() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="w-[100%] md:w-[50%] md:h-[500px] g:w-[80%] ">
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    muhammad farid
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    98556734267
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    cash
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
+              <tbody className="w-[100%] md:w-[50%]  g:w-[80%] ">
+                {customers && customers.length > 0 ? (
+                  records.map((item, index) => {
+                    return (
+                      <tr className="bg-white even:bg-gray-100" key={index}>
+                        <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                          {item.name}
+                        </td>
+                        <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                          {item.phone}
+                        </td>
+                        <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                          {item.payMethod}
+                        </td>
+
+                        <td>
+                          <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
+                            EDIT
+                          </button>
+                          &nbsp;
+                          <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
+                            DELETE
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan="3">No data available</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
-          <div class="inline-block my-[20px]">
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              {" "}
-              &laquo;{" "}
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              1
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white "
-            >
-              2
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              3
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              4
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              5
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              6
-            </a>
-            <a
-              href="#"
-              class="p-2 border border-gray-300 mx-1 bg-slate-50 active:bg-zinc-700 active:text-white"
-            >
-              {" "}
-              &raquo;{" "}
-            </a>
-          </div>
+          <Pagination>
+            <Pagination.Prev onClick={prePage} />
+            {number.map((n, i) => (
+              <Pagination.Item
+                key={i}
+                active={currentPage === n}
+                onClick={() => changePage(n)}
+              >
+                {n}
+              </Pagination.Item>
+            ))}
+            <Pagination.Next onClick={nextPage} />
+          </Pagination>
         </div>
       </div>
     </div>

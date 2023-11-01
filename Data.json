@@ -1,0 +1,422 @@
+{
+  "accounts": [
+    {
+      "email": "muhammad@gmail.com",
+      "username": "Muhammad faridd lutfi hakim",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/1010/440/HD-wallpaper-anime-baki-2018-baki-hanma.jpg",
+      "role": "operator",
+      "id": "1"
+    },
+    {
+      "email": "farid@gmail.com",
+      "username": "farid",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/988/662/HD-wallpaper-yujiro-hanma-anime-baki-anime.jpg",
+      "role": "supervisor",
+      "id": "2"
+    },
+    {
+      "id": "6",
+      "username": "wahyu",
+      "email": "wahyu@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/988/662/HD-wallpaper-yujiro-hanma-anime-baki-anime.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "7",
+      "username": "zakyy",
+      "email": "zakyy@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/508/563/HD-wallpaper-anime-baki-hanma-character-baki-hanma.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "9",
+      "username": "dani",
+      "email": "dani@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/1005/498/HD-wallpaper-baki-anime-muscle.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "10",
+      "username": "Fahri",
+      "email": "Fahri@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/854/915/HD-wallpaper-baki-the-grappler-grappler-baki-male-fighter-shirtless-red-hair-baki-baki-hanma-anime-muscles-hanma-baki.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "11",
+      "username": "Rendy",
+      "email": "Rendy@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/19/a5/d6/19a5d68939e27ac106552c4f7c438da8.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "12",
+      "username": "Rizal",
+      "email": "Rizal@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/a6/d1/db/a6d1dbe5dd2e8bb060060b01a46c8b91.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "13",
+      "username": "Fahrian",
+      "email": "Fahrian@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/cd/ea/50/cdea502d5697fc5ce46b35e5882e83cf.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "14",
+      "username": "Topek",
+      "email": "Topek@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://w0.peakpx.com/wallpaper/1010/440/HD-wallpaper-anime-baki-2018-baki-hanma.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "15",
+      "username": "Bitang",
+      "email": "Bitang@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/be/3f/9d/be3f9dfdc1bf620fc66ce0a39b24cc8b.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "16",
+      "username": "Hilmi",
+      "email": "Hilmi@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/6c/4e/d8/6c4ed87d10033deeaeb193ff9eca742b.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "17",
+      "username": "Ave",
+      "email": "Ave@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/14/9a/77/149a77f1d437b09fb928c23166c39d7b.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "18",
+      "username": "Samuel",
+      "email": "Samuel@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/f5/ae/3c/f5ae3c159d6a764180a5b343e0b834f4.jpg",
+      "role": "operator"
+    },
+    {
+      "id": "19",
+      "username": "Farel",
+      "email": "Farel@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/67/05/aa/6705aaa6f3cc744265c2345ea72e807b.jpg",
+      "role": "operator"
+    },
+    {
+      "username": "Novam",
+      "email": "Novam@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/474x/e9/13/9a/e9139a5d7ef7f5244cf4b0148c548313.jpg",
+      "role": "operator",
+      "id": "20"
+    },
+    {
+      "username": "mafa",
+      "email": "mafa@gmail.com",
+      "password": "1234566",
+      "avatarUrl": "https://i.pinimg.com/474x/15/b3/a7/15b3a7a4abb1fd5a3364accfc9c1caf5.jpg",
+      "role": "operator",
+      "id": "98efce0c"
+    },
+    {
+      "id": "10128440",
+      "username": "farid",
+      "email": "mf975100@gmail.com",
+      "password": "122",
+      "avatarUrl": "https://i.pinimg.com/236x/85/8a/e0/858ae0997a30a2a31e670dac9d46e08b.jpg",
+      "role": "supervisor"
+    },
+    {
+      "id": "f43e69ab",
+      "username": "rahma",
+      "email": "rahma@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/236x/14/9a/77/149a77f1d437b09fb928c23166c39d7b.jpg",
+      "role": "supervisor"
+    },
+    {
+      "id": "30cdb07d",
+      "username": "Muhammadfarid",
+      "email": "mhmdfard569@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/236x/fe/2b/d9/fe2bd945d7da664810d06103db549e59.jpg",
+      "role": "supervisor"
+    },
+    {
+      "id": "1c37526a",
+      "username": "Muhammadfarid",
+      "email": "mhmdfard569@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/236x/19/a5/d6/19a5d68939e27ac106552c4f7c438da8.jpg",
+      "role": "supervisor"
+    },
+    {
+      "id": "a55d937d",
+      "username": "mhmdfaridhkymm",
+      "email": "mhmdfard569@gmail.com",
+      "password": "1234567",
+      "avatarUrl": "https://i.pinimg.com/236x/e9/13/9a/e9139a5d7ef7f5244cf4b0148c548313.jpg",
+      "role": "supervisor"
+    },
+    {
+      "id": "8b59fa10",
+      "username": "adib",
+      "email": "adib@gmail.com",
+      "password": "1234567",
+      "role": "supervisor"
+    }
+  ],
+  "customers": [
+    {
+      "name": "Farid",
+      "phone": "05657641472",
+      "payMethod": "Kredit",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Hakim",
+      "phone": "056634254672",
+      "payMethod": "Debit"
+    },
+    {
+      "id": "3",
+      "name": "Ahmad",
+      "phone": "084635243516",
+      "payMethod": "Cash"
+    },
+    {
+      "id": "4",
+      "name": "Fahrian",
+      "phone": "56787654356",
+      "payMethod": "Debit"
+    },
+    {
+      "id": "6",
+      "name": "Aniq",
+      "phone": "0855764325647",
+      "payMethod": "Debit"
+    },
+    {
+      "id": "7",
+      "name": "Dani",
+      "phone": "08675643521",
+      "payMethod": "Cash"
+    },
+    {
+      "id": "8",
+      "name": "Fares",
+      "phone": "08563546756",
+      "payMethod": "Debit"
+    },
+    {
+      "id": "9",
+      "name": "Rahul",
+      "phone": "056648364846",
+      "payMethod": "Cash"
+    },
+    {
+      "id": "10",
+      "name": "Rama",
+      "phone": "056648364846",
+      "payMethod": "Debit"
+    }
+  ],
+  "orders": [
+    {
+      "rooms": "1",
+      "capacity": "double bad",
+      "snack": true,
+      "lunch": true,
+      "extraTime": false,
+      "booking": "1 hari",
+      "approve": true,
+      "id": "1"
+    },
+    {
+      "rooms": "2",
+      "capacity": "single bad",
+      "snack": true,
+      "lunch": false,
+      "extraTime": true,
+      "booking": "2 hari",
+      "approve": true,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "rooms": "3",
+      "capacity": "double bad",
+      "snack": false,
+      "lunch": true,
+      "extraTime": false,
+      "booking": "1 hari",
+      "approve": false
+    },
+    {
+      "id": "7e360017",
+      "rooms": "2",
+      "capacity": "double bed",
+      "snack": true,
+      "lunch": false,
+      "extraTime": true,
+      "booking": "2 hari",
+      "approve": false
+    },
+    {
+      "id": "c3a42a05",
+      "rooms": "2",
+      "capacity": "double bed",
+      "snack": "false",
+      "lunch": "",
+      "extraTime": "",
+      "booking": "2 hari"
+    },
+    {
+      "id": "5cca3904",
+      "rooms": "2",
+      "capacity": "double bed",
+      "snack": "false",
+      "lunch": "",
+      "extraTime": "",
+      "booking": "2 hari"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    },
+    {
+      "id": "6",
+      "noLantai": "2",
+      "noKamar": "3"
+    }
+  
+   
+  ],
+  "report": [
+    {
+      "rooms": "1",
+      "dateTime": "11/10/23  03:04:15 AM",
+      "capacity": "double bad",
+      "snack": true,
+      "extraTime": false,
+      "booking": "1 hari",
+      "approve": true,
+      "id": "1"
+    },
+    {
+      "rooms": "2",
+      "dateTime": "04/10/23 06:06:15 PM",
+      "capacity": "single bad",
+      "snack": true,
+      "extraTime": true,
+      "booking": "2 hari",
+      "approve": true,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "rooms": "3",
+      "dateTime": "04/10/23 06:06:15 AM",
+      "capacity": "double bad",
+      "snack": false,
+      "extraTime": false,
+      "booking": "1 hari",
+      "approve": false
+    },
+    {
+      "id": "7e360017",
+      "rooms": "2",
+      "dateTime": "04/10/23 06:06:15 PM",
+      "capacity": "double bed",
+      "snack": true,
+      "extraTime": true,
+      "booking": "2 hari",
+      "approve": false
+    },
+    {
+      "id": "762e1db6",
+      "dateTime": "11/10/23 08.00-20-00",
+      "rooms": "2",
+      "capacity": "double bed",
+      "snack": "false",
+      "extraTime": "",
+      "booking": "2 hari"
+    },
+    {
+      "id": "e2ccd3f2",
+      "dateTime": "11/10/23 08.00-20.00",
+      "rooms": "2",
+      "capacity": "double bed",
+      "snack": "",
+      "extraTime": "",
+      "booking": "2 hari"
+    }
+  ]
+}
