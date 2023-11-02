@@ -1,8 +1,56 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Button, Table, Pagination } from "react-bootstrap";
 import logoV3 from "../../asset/logoV3.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 function TableOrders() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [reportList, setReport] = useState([]);
+  const [recordsPerPage, setRecordsPerPage] = useState(5);
+
+  const firstIndex = (currentPage - 1) * recordsPerPage;
+  const lastIndex = currentPage * recordsPerPage;
+
+  const handleDelete = async (id) => {
+    try {
+      const respons = await axios.delete(`http://localhost:1234/report/${id}`);
+      console.log(respons);
+      console.log("deleted");
+      getOrder();
+    } catch (error) {
+      console.log(error);
+    }
+    Swal.fire({
+      position: "top-middle",
+      icon: "success",
+      title: "Delete berhasil!!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  const getOrder = async () => {
+    try {
+      const response = await axios.get("http://localhost:1234/report");
+      const allReport = response.data;
+      console.log(allReport);
+      const filteredReport = allReport.filter((order) =>
+        order.rooms?.toLowerCase().includes(searchTerm?.toLowerCase())
+      );
+      setReport(filteredReport);
+      console.log(filteredReport);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const records = reportList.slice(firstIndex, lastIndex);
+
   return (
     <div className=" bg-[#B9B4C7] w-[900px] h-[1500px] md:w-[900px] lg:w-[100%]">
       <header class="bg-zinc-700">
@@ -109,6 +157,8 @@ function TableOrders() {
                 type="text"
                 className="rounded-lg w-80 h-[40px] placeholder:text-[20px] text-[20px] pr-8"
                 id="SEARCH"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 name="SEARCH"
                 placeholder="SEARCH"
               />
@@ -125,7 +175,14 @@ function TableOrders() {
             </div>
 
             <div className=" flex justify-center items-center mx-[30px] ">
-              <select className=" bg-zinc-700 text-[#FFF7F7] w-[60px] rounded-xl h-[40px]  md:bg-zinc-700 text-[#FFF7F7] md:w-[60px] rounded-xl h-[40px]    lg:bg-zinc-700 text-[#FFF7F7] lg:w-[100px] rounded-xl h-[40px] ">
+              <select
+                value={recordsPerPage}
+                onChange={(e) => {
+                  setCurrentPage(1);
+                  setRecordsPerPage(Number(e.target.value));
+                }}
+                className=" bg-zinc-700 text-[#FFF7F7] w-[60px] rounded-xl h-[40px]  md:bg-zinc-700 text-[#FFF7F7] md:w-[60px] rounded-xl h-[40px]    lg:bg-zinc-700 text-[#FFF7F7] lg:w-[100px] rounded-xl h-[40px] "
+              >
                 <option>5</option>
                 <option>10</option>
                 <option>15</option>
@@ -166,287 +223,45 @@ function TableOrders() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="w- md:w-[50%] lg:w-[80%] ">
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
-                <tr className="bg-white even:bg-gray-100">
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    11/10/23 03:04:15 AM
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    2
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    double bad
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    tidak ada
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] ">
-                    1 hari
-                  </td>
-                  <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      EDIT
-                    </button>
-                    <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
+
+              <tbody>
+                {records.map((item, index) => (
+                  <tr className="bg-white even:bg-gray-100" key={index}>
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      {item.dateTime}
+                    </td>
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      {item.rooms}
+                    </td>
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      {item.capacity}
+                    </td>
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      {item.snack === true ? "ada" : "tidak ada"}
+                    </td>
+
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      {item.extraTime === true ? "ada" : "tidak ada"}
+                    </td>
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      {item.booking}
+                    </td>
+                    <td className="border-2 border-[#dddddd] text-left p-[8px]">
+                      <Link to={`/editReportSewa/${item.id}`}>
+                        <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
+                          EDIT
+                        </button>
+                      </Link>
+                      &nbsp;
+                      <button
+                        className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]"
+                        onClick={() => handleDelete(item.id)}
+                      >
+                        DELETE
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

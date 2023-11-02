@@ -17,7 +17,7 @@ function AddReportSewa() {
       <div className="  w-[200px]  h-[300px] rounded-b-[20px]   bg-[#393646]  md:w-[300px] md:h-[400px]  md:rounded-r-3xl md:rounded-l-none lg:w-96 lg:h-[550px] lg:rounded-r-3xl ">
         <div className="">
           <h3 className="  text-[10px]  md:text-center md:text-[20px]  lg:text-4xl font-mono text-slate-50   text-center font-bold my-[10px]">
-            CREATE ORDERS
+            CREATE Report Sewa
           </h3>
         </div>
 
@@ -26,9 +26,9 @@ function AddReportSewa() {
             <input
               type="text "
               className="  rounded-[5px] placeholder:text-[10px] md:text-[10px]  w-[150px] h-[20px] md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px]  lg:w-80 lg:h-14    lg:placeholder:text-[20px] lg:text-[20px]"
-              id="Rooms "
-              name="Rooms "
-              placeholder="Rooms "
+              id="Date Time "
+              name="Date Time "
+              placeholder="Date Time "
             />
           </div>
 
@@ -36,9 +36,18 @@ function AddReportSewa() {
             <input
               type="text"
               className="  rounded-[5px] placeholder:text-[10px] md:text-[10px]   w-[150px] h-[20px] md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px] lg:w-80 lg:h-14     lg:placeholder:text-[20px] lg:text-[20px]"
-              id="capacity"
-              name="capacity"
-              placeholder="capacity"
+              id="Rooms"
+              name="Rooms"
+              placeholder="Rooms"
+            />
+          </div>
+          <div className="my-2 flex justify-center items-center ">
+            <input
+              type="text"
+              className="  rounded-[5px] placeholder:text-[10px] md:text-[10px]   w-[150px] h-[20px] md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px] lg:w-80 lg:h-14     lg:placeholder:text-[20px] lg:text-[20px]"
+              id="Capacity"
+              name="Capacity"
+              placeholder="Capacity"
             />
           </div>
           <div className="my-2 flex justify-center items-center ">
@@ -48,15 +57,6 @@ function AddReportSewa() {
               id="Snack"
               name="Snack"
               placeholder="Snack"
-            />
-          </div>
-          <div className="my-2 flex justify-center items-center ">
-            <input
-              type="text"
-              className="  rounded-[5px] placeholder:text-[10px] md:text-[10px]   w-[150px] h-[20px] md:rounded-lg md:w-[200px] md:h-[30px]  md:placeholder:text-[15px] md:text-[15px] lg:w-80 lg:h-14     lg:placeholder:text-[20px] lg:text-[20px]"
-              id="Lunch"
-              name="Lunch"
-              placeholder="Lunch"
             />
           </div>
           <div className="my-2 flex justify-center items-center ">

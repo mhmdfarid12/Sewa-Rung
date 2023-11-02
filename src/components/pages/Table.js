@@ -250,7 +250,7 @@ function Table() {
                         </td>
 
                         <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center ">
-                          <Link to={`/#/${item.id}`}>
+                          <Link to={`/edit${item.id}`}>
                             <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                               EDIT
                             </button>

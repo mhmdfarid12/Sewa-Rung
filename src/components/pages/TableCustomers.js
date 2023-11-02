@@ -54,6 +54,10 @@ function TableCustomers() {
     }
   }
 
+  useEffect(() => {
+    getCustomers();
+  }, []);
+
   return (
     <div className=" bg-[#B9B4C7] w-[900px] h-[1500px] md:w-[900px] lg:w-[100%]">
       <header class="bg-zinc-700">
@@ -224,7 +228,7 @@ function TableCustomers() {
                           {item.payMethod}
                         </td>
 
-                        <td>
+                        <td className="border-2 border-[#dddddd] text-left p-[8px] flex justify-center items-center">
                           <button className="bg-zinc-700 w-[150px] rounded-xl h-[40px]  mx-[10px] text-[#FFF7F7]">
                             EDIT
                           </button>

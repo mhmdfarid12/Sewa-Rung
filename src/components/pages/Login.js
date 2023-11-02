@@ -38,7 +38,7 @@ function Login() {
           });
           localStorage.setItem("UserRole", existingAccount.role);
           localStorage.setItem("id", existingAccount.id);
-          navigate("/");
+          navigate("/home");
         } else {
           Swal.fire({
             position: "top-middle",
@@ -69,7 +69,6 @@ function Login() {
       [name]: value,
     });
   };
-
   return (
     <div
       className="bg-[#B9B4C7] h-screen flex flex-col justify-center items-center
